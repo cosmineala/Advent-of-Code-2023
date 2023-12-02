@@ -48,7 +48,7 @@ const Day2: React.FC<IProps> = () => {
 
 export default Day2;
 
-
+/// 1.1
 async function solve1(): Promise<string> {
     const input = await downloadAndParseDayInput(2);
 
@@ -91,6 +91,14 @@ function verifyQtyPerColour(input: string): number {
 
     return parseInt(no);
 }
+
+const cubeCounts = {
+    red: 12,
+    green: 13,
+    blue: 14,
+}
+
+/// 1.2
 async function solve2(): Promise<string> {
     const input = await downloadAndParseDayInput(2);
 
@@ -142,10 +150,3 @@ function verifyQtyPerColou2(input: string): number {
 
     return res;
 }
-
-const cubeCounts = {
-    red: 12,
-    green: 13,
-    blue: 14,
-}
-
