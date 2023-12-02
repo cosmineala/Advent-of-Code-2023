@@ -64,7 +64,7 @@ async function solve1(): Promise<string> {
 function verifyQtyPerColour(input: string): number {
     const gameNoRegex = /Game (\d+): /g;
 
-    const no = [...input.matchAll(gameNoRegex)][0][1];
+    const no = Array.from(input.matchAll(gameNoRegex))[0][1];
 
     let inputCubesText = input.replace(gameNoRegex, "");
     let toReturn = 0;
@@ -73,8 +73,8 @@ function verifyQtyPerColour(input: string): number {
         let set = cubeSet.split(", ");
         set.forEach((cube) => {
 
-            let count = parseInt( cube.match(/\d+/g)[0] );
-            let color = cube.match(/red|green|blue/g)[0];
+            let count = parseInt( Array.from(cube.matchAll(/\d+/g))[0][0] );
+            let color = Array.from(cube.matchAll(/red|green|blue/g))[0][0] as "red" | "green" | "blue";
             
             if( count > cubeCounts[color]  ) {
                 
@@ -106,7 +106,7 @@ async function solve2(): Promise<string> {
 function verifyQtyPerColou2(input: string): number {
     const gameNoRegex = /Game (\d+): /g;
 
-    const no = [...input.matchAll(gameNoRegex)][0][1];
+    const no = Array.from(input.matchAll(gameNoRegex))[0][1];
 
     let inputCubesText = input.replace(gameNoRegex, "");
     let toReturn = 0;
@@ -121,11 +121,11 @@ function verifyQtyPerColou2(input: string): number {
         let set = cubeSet.split(", ");
         set.forEach((cube) => {
 
-            let count = parseInt( cube.match(/\d+/g)[0] );
-            let color = cube.match(/red|green|blue/g)[0];
+            let count = parseInt( Array.from(cube.matchAll(/\d+/g))[0][0] ) as number;
+            let color = Array.from(cube.matchAll(/red|green|blue/g))[0][0] as "red" | "green" | "blue";
 
             if (count > max[color]) {
-                max[color] = parseInt(count);
+                max[color] = count;
             }
             
             // if( count > cubeCounts[color]  ) {
