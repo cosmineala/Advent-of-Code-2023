@@ -10,6 +10,9 @@ export default function Home() {
         <Link href={'./Day1'} className='text-primary hover:text-primaryHover' >
           [Day 1]
         </Link>
+        <Link href={'./Day2'} className='text-primary hover:text-primaryHover' >
+          [Day 2]
+        </Link>
         {/* <Link href={'./Day1'} className='text-primary hover:text-primaryHover' >
           [Day 2]
         </Link>
