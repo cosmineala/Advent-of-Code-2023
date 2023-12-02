@@ -1,0 +1,7 @@
+GET https://adventofcode.com/2023/day/1 HTTP/1.1
+###
+
+
+GET https://adventofcode.com/2023/day/1/input HTTP/1.1
+# Cookie: session=53616c7465645f5f29609197375f100fc8faae9af09df5d50399b76381b291a38200dc618db6467b07c87aa48f9c3331154028c482c86d547483c7a5a9b4a8ae
+###
