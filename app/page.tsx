@@ -13,6 +13,9 @@ export default function Home() {
         <Link href={'./Day2'} className='text-primary hover:text-primaryHover' >
           [Day 2]
         </Link>
+        <Link href={'./Day3'} className='text-primary hover:text-primaryHover' >
+          [Day 3]
+        </Link>
         {/* <Link href={'./Day1'} className='text-primary hover:text-primaryHover' >
           [Day 2]
         </Link>
