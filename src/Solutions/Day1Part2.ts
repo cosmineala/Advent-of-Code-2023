@@ -1,35 +1,4 @@
-"use client";
-import React from "react";
-import { downloadAndParseDayInput } from "@/Util/Parsers";
-
-interface IProps { };
-
-const Day1Part2: React.FC<IProps> = () => {
-
-    const [res2, set2Res] = React.useState<string>("");
-
-    return (
-        <div className="flex gap-4" >
-            <button
-                className="text-xl text-primary hover:text-primaryHover"
-                onClick={async () => {
-                    const res = await solve_Day1Part2();
-                    set2Res(res);
-                }}
-            >
-                [Solve 1.2]
-            </button>
-            <div className="text-xl text-yellow-600" >
-                {res2}
-            </div>
-        </div>
-    );
-};
-
-export default Day1Part2;
-
-async function solve_Day1Part2(): Promise<string> {
-    const input = await downloadAndParseDayInput(1);
+export function solve_Day1Part2(input: string): string {
 
     let res = input.split("\n").reduce((acc, curr) => {
         return acc + addFirstAndLastNumberFromStringIncludingText(curr);
@@ -84,9 +53,7 @@ const numMaps = new Map([
 ]);
 
 export const SOLUTION_DAY1_PART2 = 
-`async function solve_Day1Part2(): Promise<string> {
-    const input = await downloadAndParseDayInput(1);
-
+`function solve_Day1Part2(input: string): string {
     let res = input.split("\\n").reduce((acc, curr) => {
         return acc + addFirstAndLastNumberFromStringIncludingText(curr);
     }, 0);

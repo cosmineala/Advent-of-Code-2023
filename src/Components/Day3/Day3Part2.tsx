@@ -96,7 +96,7 @@ function handleLine(matrix: ClassEngineMatrix, allLines: string[][], line: strin
         let char = line[x];
 
         let isStar = char === '*';
-        if (isStar === false) {
+        if (isStar === false) { 
             continue;
         }
         // if (char === "-" ) {

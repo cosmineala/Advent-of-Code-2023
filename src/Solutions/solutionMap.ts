@@ -1,0 +1,13 @@
+import { solve_Day1Part1 } from '@/Solutions/Day1Part1'
+import { solve_Day1Part2 } from './Day1Part2'
+
+const solutionMap: { [key: number]: { [key: number]: (input: string) => string } } = {
+    1: {
+        1: solve_Day1Part1,
+        2: solve_Day1Part2,
+    },
+}
+
+export default function getSolution( day: number, part: number ) {
+    return solutionMap[ day ][ part ]
+}
