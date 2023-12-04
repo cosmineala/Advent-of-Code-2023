@@ -1,4 +1,3 @@
-import Day1Part1 from '@/Components/Day1/Day1Part1'
 import Day2 from '@/Components/Day2'
 import TextDay1 from '@/problemText/TextDay1'
 import Image from 'next/image'

@@ -1,75 +1,55 @@
-"use client";
-import React from "react";
-import { downloadAndParseDayInput } from "../../Util/Parsers";
+// "use client";
+// import React, { useEffect } from "react";
+// import { downloadAndParseDayInput } from "../../Util/Parsers";
+// import { text } from "stream/consumers";
+// import getSolution from "@/Solutions/solutionMap";
 
-interface IProps { };
+// interface IProps {
+//     day: number;
+//     part: number;
+//  };
 
-const Day1Part1: React.FC<IProps> = () => {
+// const Day1Part1: React.FC<IProps> = ({day,part}) => {
 
-    const [res1, set1Res] = React.useState<string>("");
+//     const [res, setRes] = React.useState<string>("");
+//     const [myInput, setMyInput] = React.useState<string>("");
+//     const textareaRef = React.useRef<HTMLTextAreaElement>(null);
 
-    return (
-        <div className="flex gap-4" >
-            <button
-                className="text-xl text-primary hover:text-primaryHover"
-                onClick={async () => {
-                    const res = await solve_Day1Part1();
-                    set1Res(res);
-                }}
-            >
-                [Solve 1.1]
-            </button>
-            <div className="text-xl text-yellow-600" >
-                {res1}
-            </div>
-        </div>
-    );
-};
+//     useEffect(() => {
+//         const get = async () => {
+//             const input = await downloadAndParseDayInput(day);
+//             setMyInput(input);
+//             textareaRef.current!.value = input;
+//         };
+//         get();
+//     }, []);
 
-export default Day1Part1;
+//     return (
+//         <>
+//             <div className="flex justify-between">
+//                 <h1 className="text-xl text-primary">Input:</h1>
+//                 <button className=" text-primary hover:text-primaryHover " onClick={() => { textareaRef.current!.value = myInput }} >[reset]</button>
+//             </div>
+//             <textarea ref={textareaRef} className="bg-black w-full h-56" name="input" id=""></textarea>
+//             <div className="flex gap-4" >
+//                 <button
+//                     className="text-xl text-primary hover:text-primaryHover"
+//                     onClick={ () => {
+//                         let solution = getSolution(day,part);
+//                         const res = solution(textareaRef.current!.value);
+//                         setRes(res);
+//                     }}
+//                 >
+//                     [Solve Day{day} Part{part}]
+//                 </button>
+//                 <div className="text-xl text-yellow-600" >
+//                     {res}
+//                 </div>
+//             </div>
+//         </>
+//     );
+// };
+
+// export default Day1Part1;
 
 
-async function solve_Day1Part1(): Promise<string> {
-    // download input
-    const input = await downloadAndParseDayInput(1);
-    // for each line, add first and last number
-    let res = input.split("\n").reduce((acc, curr) => {
-        return acc + addFirstANdLastNumberFromString(curr);
-    }, 0);
-
-    return res.toString();
-}
-
-function addFirstANdLastNumberFromString(input: string): number {
-    const regex = /(\d)/g;
-    const digits = input.match(regex);
-    if (digits === null || digits.length < 1) {
-        throw new Error("Not enough numbers in input in \n" + input + "\n" + digits + "\n");
-    }
-    const firstDigit = parseInt(digits[0]);
-    const lastDigit = parseInt(digits[digits.length - 1]);
-    return (10 * firstDigit) + lastDigit;
-}
-
-export const SOLUTION_DAY1_PART1 = 
-`async function solve_Day1Part1(): Promise<string> {
-    // download input
-    const input = await downloadAndParseDayInput(1);
-    // for each line, add first and last number
-    let res = input.split("\\n").reduce((acc, curr) => {
-        return acc + addFirstANdLastNumberFromString(curr);
-    }, 0);
-
-    return res.toString();
-}
-
-function addFirstANdLastNumberFromString(input: string): number {
-    const regex = /(\\d)/g;
-    const digits = input.match(regex);
-    if (digits === null || digits.length < 1) {
-        throw new Error("Not enough numbers in input in \\n" + input + "\\n" + digits + "\\n");
-    }
-    const firstDigit = parseInt(digits[0]);
-    const lastDigit = parseInt(digits[digits.length - 1]);
-    return (10 * firstDigit) + lastDigit;
-}`;

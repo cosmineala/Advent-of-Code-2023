@@ -1,8 +1,7 @@
+import CProblemSolver from '@/Components/CProblemSolver'
 import CodeSnipet from '@/Components/CodeSnipet'
-import Day1Part1, { SOLUTION_DAY1_PART1 } from '@/Components/Day1/Day1Part1'
-import Day1Part2, { SOLUTION_DAY1_PART2 } from '@/Components/Day1/Day1Part2'
-import TextDay1 from '@/problemText/TextDay1'
-import Image from 'next/image'
+import { SOLUTION_DAY1_PART1 } from '@/Solutions/Day1Part1'
+import { SOLUTION_DAY1_PART2 } from '@/Solutions/Day1Part2'
 import Link from 'next/link'
 
 const DAY = 1;
@@ -27,16 +26,13 @@ export default function Day1Page() {
         <p>{`As they're making the final adjustments, they discover that their calibration document (your puzzle input) has been amended by a very young Elf who was apparently just excited to show off her art skills. Consequently, the Elves are having trouble reading the values on the document.`}</p>
         <p>{`The newly-improved calibration document consists of lines of text; each line originally contained a specific calibration value that the Elves now need to recover. On each line, the calibration value can be found by combining the first digit and the last digit (in that order) to form a single two-digit number.`}</p>
         <p>{`For example:`}</p>
-        <pre className='border border-gray-600 w-fit p-1 ' >
-          <code>{`1abc2\npqr3stu8vwx\na1b2c3d4e5f\ntreb7uchet`}</code>
-        </pre>
+        <CodeSnipet title='Example Input' code={'1abc2\npqr3stu8vwx\na1b2c3d4e5f\ntreb7uchet'}/>
         <p>{`In this example, the calibration values of these four lines are 12, 38, 15, and 77. Adding these together produces 142.`}</p>
         <p>{`Consider your entire calibration document. What is the sum of all of the calibration values?`}</p>
 
         {/* Solution */}
-        <Day1Part1 />
-        <p className='py-4 ' >TypeScript solution: </p>
-        <CodeSnipet code={SOLUTION_DAY1_PART1} />
+        <CProblemSolver day={1} part={1} />
+        <CodeSnipet title='Day 1 Part 1 TypeScript solution' code={SOLUTION_DAY1_PART1} />
       </article>
 
       {/* Part 2 */}
@@ -46,16 +42,13 @@ export default function Day1Page() {
         {/*Problem statement */}
         <p>{`Your calculation isn't quite right. It looks like some of the digits are actually spelled out with letters: one, two, three, four, five, six, seven, eight, and nine also count as valid "digits".`}</p>
         <p>{`Equipped with this new information, you now need to find the real first and last digit on each line. For example:`}</p>
-        <pre className='border border-gray-600 w-fit p-1 ' >
-          <code>{`two1nine\neightwothree\nabcone2threexyz\nxtwone3four\n4nineeightseven2\nzoneight234\n7pqrstsixteen`}</code>
-        </pre>
+        <CodeSnipet title='Example Input' code={'two1nine\neightwothree\nabcone2threexyz\nxtwone3four\n4nineeightseven2\nzoneight234\n7pqrstsixteen'}/>
         <p>{`In this example, the calibration values are 29, 83, 13, 24, 42, 14, and 76. Adding these together produces 281.`}</p>
         <p>{`What is the sum of all of the calibration values?`}</p>
 
         {/* Solution */}
-        <Day1Part2 />
-        <p className='py-4' >TypeScript solution: </p>
-        <CodeSnipet code={SOLUTION_DAY1_PART2} />
+        <CProblemSolver day={1} part={2} />
+        <CodeSnipet title='Day 1 Part 2 TypeScript solution' code={SOLUTION_DAY1_PART2} />
       </article>
 
     </main>
