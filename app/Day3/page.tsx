@@ -1,9 +1,5 @@
-import Day1Part1 from '@/Components/Day1/Day1Part1'
-import Day2 from '@/Components/Day2'
 import Day3Part1 from '@/Components/Day3/Day3Part1'
 import Day3Part2 from '@/Components/Day3/Day3Part2'
-import TextDay1 from '@/problemText/TextDay1'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Day3Page() {
