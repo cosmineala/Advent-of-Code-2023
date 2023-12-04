@@ -27,10 +27,10 @@ const CProblemSolver: React.FC<IProps> = ({day,part}) => {
     return (
         <>
             <div className="flex justify-between">
-                <h1 className="text-xl text-primary">Input:</h1>
+                <h1 className="text-xl text-primary">My editable input:</h1>
                 <button className=" text-primary hover:text-primaryHover " onClick={() => { textareaRef.current!.value = myInput }} >[reset]</button>
             </div>
-            <textarea ref={textareaRef} className="bg-black w-full h-56" name="input" id=""></textarea>
+            <textarea ref={textareaRef} wrap="off" className="bg-black w-full h-56 overflow-scroll" name="input" id=""></textarea>
             <div className="flex gap-4" >
                 <button
                     className="text-xl text-primary hover:text-primaryHover"
