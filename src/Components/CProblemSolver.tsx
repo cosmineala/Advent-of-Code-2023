@@ -13,6 +13,7 @@ const CProblemSolver: React.FC<IProps> = ({day,part}) => {
 
     const [res, setRes] = React.useState<string>("");
     const [myInput, setMyInput] = React.useState<string>("");
+    const [time,setTime] = React.useState<string>("");
     const textareaRef = React.useRef<HTMLTextAreaElement>(null);
 
     useEffect(() => {
@@ -36,14 +37,19 @@ const CProblemSolver: React.FC<IProps> = ({day,part}) => {
                     className="text-xl text-primary hover:text-primaryHover"
                     onClick={ () => {
                         let solution = getSolution(day,part);
+                        const start = Date.now();
                         const res = solution(textareaRef.current!.value);
+                        const end = Date.now();
+                        const pased = end - start;
+                        
                         setRes(res);
+                        setTime(pasedTimeToString(pased));
                     }}
                 >
                     [Solve Day{day} Part{part}]
                 </button>
                 <div className="text-xl text-yellow-600" >
-                    {res}
+                    {res}{res !== ''?' | ':''}{time}
                 </div>
             </div>
         </>
@@ -51,5 +57,14 @@ const CProblemSolver: React.FC<IProps> = ({day,part}) => {
 };
 
 export default CProblemSolver;
+
+function pasedTimeToString( pased: number ): string {
+    if (pased < 1_000){
+        return `${pased} ms`
+    }
+
+    return `${ Math.floor(pased / 1_000)} seconds and ${pased%1_000} ms`;
+
+}
 
 
