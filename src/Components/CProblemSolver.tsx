@@ -23,7 +23,7 @@ const CProblemSolver: React.FC<IProps> = ({day,part}) => {
             textareaRef.current!.value = input;
         };
         get();
-    }, []);
+    }, [day]);
 
     return (
         <>
