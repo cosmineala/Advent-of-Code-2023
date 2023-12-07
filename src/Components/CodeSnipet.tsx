@@ -10,7 +10,7 @@ interface IProps {
 const CodeSnipet: React.FC<IProps> = ({ className, code, title }) => {
     return (
         <div className="flex flex-col max-w-fit" >
-            <div className="flex gap-4 justify-between py-1 px-2 bg-[#32326f] rounded-t-md" >
+            <div className="flex gap-4 justify-between py-1 px-2 bg-[#1f1f46] rounded-t-md" >
                 <div>{title}</div>
                 <button className="text-primary hover:text-primaryHover active:bg-green-900"
                     onClick={() => {

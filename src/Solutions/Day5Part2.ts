@@ -1,4 +1,5 @@
-type triple = [number, number, number];
+//             destination, source, range
+type triple = [number,      number, number];
 
 export function solve_Day5Part2(input: string): string {
 
