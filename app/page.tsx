@@ -2,38 +2,21 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="flex justify-center">
 
-     
 
-      <div className='p-5 flex flex-col gap-2' >
-        <Link href={'./Day1'} className='text-primary hover:text-primaryHover' >
-          [Day 1]
-        </Link>
-        <Link href={'./Day2'} className='text-primary hover:text-primaryHover' >
-          [Day 2]
-        </Link>
-        <Link href={'./Day3'} className='text-primary hover:text-primaryHover' >
-          [Day 3]
-        </Link>
-        <Link href={'./Day4'} className='text-primary hover:text-primaryHover' >
-          [Day 4]
-        </Link>
-        <Link href={'./Day5'} className='text-primary hover:text-primaryHover' >
-          [Day 5]
-        </Link>
-        <Link href={'./Day6'} className='text-primary hover:text-primaryHover' >
-          [Day 6]
-        </Link>
-        {/* <Link href={'./Day1'} className='text-primary hover:text-primaryHover' >
-          [Day 2]
-        </Link>
-        <Link href={'./Day1'} className='text-primary hover:text-primaryHover' >
-          [Day 3]
-        </Link>
-        <Link href={'./Day1'} className='text-primary hover:text-primaryHover' >
-          [Day 4]
-        </Link> */}
+
+      <div className='p-5 grid grid-cols-3 lg:grid-cols-7 gap-4 text-xl max-w-fit' >
+
+        {/* empty spaces */}
+        {Array.from({ length: 25 }, (_, i) => i + 1).map(day =>
+          <div className='hidden lg:block' ></div>
+        )}
+
+        {Array.from({ length: 25 }, (_, i) => i + 1).map(day =>
+          <Link href={`./Day${day}`} className='text-primary hover:text-primaryHover' >[Day {day < 10 && <span>&nbsp;</span>}{day}]</Link>
+        )}
+
       </div>
     </main>
 
